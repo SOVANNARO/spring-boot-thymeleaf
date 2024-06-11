@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+</head>
+<body>
+    <div align="center" style="border: 2px solid black; max-width: 50%; margin: 0 auto; text-align: center;">
+        <h1>User Registration Form</h1>
+        <form th:action="@{/register/save}" th:object="${userForm}" method="post" role="form">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>Name</td>
+                    <td><label>
+                        <input th:field="*{name}" type="text" name="name" />
+                    </label></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><label>
+                        <input th:field="*{email}" type="email" name="email" />
+                    </label></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><label>
+                        <input th:field="*{password}" type="password" name="password">
+                    </label></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <label>
+                            <input th:field="*{gender}" type="radio" name="gender" value="M" />
+                        </label> Male
+                        <label>
+                            <input th:field="*{gender}" type="radio" name="gender" value="F" />
+                        </label> Female
+                        <label>
+                            <input th:field="*{gender}" type="radio" name="gender" value="O" />
+                        </label> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>Married</td>
+                    <td>
+                        <label>
+                            <input th:field="*{married}" type="checkbox" name="married" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Profession</td>
+                    <td>
+                        <label>
+                            <select th:field="*{profession}" name="profession">
+                                <option th:each="profession : ${listProfession}" th:value="${profession}" th:text="${profession}"></option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <label>
+                            <textarea rows="5" cols="25" th:field="*{address}"></textarea>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Register" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

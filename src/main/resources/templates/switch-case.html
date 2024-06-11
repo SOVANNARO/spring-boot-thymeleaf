@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch case condition</title>
+</head>
+<body>
+    <h1>Switch case condition</h1>
+    <p th:switch="${user.role}">
+        <span th:case="ADMIN">Admin</span>
+        <span th:case="USER">User</span>
+        <span th:case="*">Unknown</span>
+    </p>
+</body>
+</html>
