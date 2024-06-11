@@ -19,7 +19,7 @@ Out-of-the-box, Thymeleaf allows you to process six kinds of templates:
 Thymeleaf template can be a HTML, XML, JavaScript, CSS, etc.
 
 **For Example**: Here the is Thymeleaf HTML template with HTML code and Thymeleaf expressions.
-```
+```html
 <table class="table table-striped table-hover table-bordered">
     <thead class="table-dark">
         <tr>
